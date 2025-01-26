@@ -204,6 +204,11 @@ margin-bottom: 4rem;
  margin-left: 3rem;
  
 }
+.card-btn button{
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
 /* project styles end */
 /* contact  section*/
 .contact-container{
@@ -218,8 +223,6 @@ margin-bottom: 4rem;
   width: 60px;
   margin-left: 5rem;
 }
-
-
 .right-contact-container{
   flex: 4;
   margin-top: 2rem;
@@ -255,14 +258,8 @@ margin-bottom: 4rem;
   animation: icons 1s infinite;
   
 }
-@keyframes icons {
-  0%, 100%{
-    transform: translateY(0px);
-  }
-  50%{
-    transform: translateY(-20px);
-  }
-}
+/* Contact section */
+/* Footer section */
 
 .footer-section{
   margin-top: 4rem;
@@ -279,15 +276,12 @@ margin-bottom: 4rem;
   line-height: 19px;
 }
 .left-footer{
-  flex: 2;
+  flex: 1;
 }
 .right-footer p{
   font-size: 1.5rem;
   line-height: 19px;
 }
-.right-footer{
-  flex: 1;
-  margin: auto;
-  display: flex;
-  gap: 0.2rem;
-}
+/* Footer section */
+
+
