@@ -46,7 +46,7 @@ img {
 .nav-list {
   color: #ffffff;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
 }
 .nav-list:hover {
   color: #1b1b1b;
@@ -87,12 +87,12 @@ img {
 }
 .desc-1 {
   font-weight: 400px;
-  font-size: 29px;
+  font-size: 22px;
   line-height: 29px;
 }
 .desc-2 {
   margin-top: 2.2rem;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 29px;
 }
 /* Hero styles end */
@@ -109,8 +109,8 @@ img {
   color: #cccccc;
 }
 .skill-desc{
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 24px;
   line-height: 20px;
   text-align: center;
   color: #cccccc;
@@ -255,9 +255,7 @@ margin-bottom: 4rem;
 .icons{
   display: flex;
   gap: 1.1rem;
-  animation: icons 1s infinite;
-  
-}
+  cursor: pointer}
 /* Contact section */
 /* Footer section */
 
@@ -283,5 +281,89 @@ margin-bottom: 4rem;
   line-height: 19px;
 }
 /* Footer section */
-
-
+@media (max-width: 768px) {
+  .my-logo{
+    display: none;
+  }
+  .nav-lists{
+    display: none;
+  }
+  .hero-container{
+    flex-direction: column-reverse;
+  }
+  .left-content{
+    text-align: center;
+  }
+  .skills{
+    flex-wrap: wrap;
+  }
+  .hero-img{
+    max-width: fit-content;
+    width: 320px;
+  }
+  .left-contact-container{
+    display: none;
+  }
+  .contact{
+    gap: 0.3rem;
+  }
+  .contact-container{
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .card{
+    width: 100%;
+  }
+  .card-img{
+    max-width: 100%;
+    height: 400px;
+  }
+  .card-content{
+    text-align: center;
+  }
+  .card-btn{
+    margin-left: 4rem;
+    align-items: center;
+  }
+  .footer-section{
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-footer, .right-footer{
+    width: 100%;
+    text-align: center;
+  }
+  .lists{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .list{
+    margin: 10px 0;
+  }
+}
+@media (max-width: 520px) {
+  .hero-img{
+    display: none;
+  }
+  .card-img{
+    height: 200px;
+  }
+  .contact{
+    display: none;
+  }
+  .icons{
+    align-items: center;
+  }
+}
+@media (max-width: 480px) {
+  .footer-section{
+    padding: 10px;
+  }
+  .list{
+    font-size: 14px;
+  }
+  .copy-right{
+    font-size: 12px;
+  }
+}
