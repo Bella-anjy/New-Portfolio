@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Android Chrome Icons -->
+    <link rel="icon" type="image/png" href="images/favicon_io/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="images/favicon_io/android-chrome-512x512.png" sizes="512x512">
+    <!-- Apple Touch Icons -->
+    <link rel="icon" type="image/png" href="images/favicon_io/apple-touch-icon.png">
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.icon">
+		<link rel="icon" type="image/png" href="images/favicon_io/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="images/favicon_io/favicon-32x32.png" sizes="32x32">
+
+    <link rel="manifest" href="images/favicon_io/site.webmanifest">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
@@ -20,7 +31,7 @@
       <img class="my-logo" src="images/logo.png" alt="logo" />
 
       <nav>
-        <ul class="nav-lists">
+        <ul class="nav-lists" id="menu">
           <li class="nav-list">
             <a href="#home">Home</a>
           </li>
@@ -37,7 +48,11 @@
             <a href="#contact">Contact</a>
           </li>
         </ul>
-        <span class="fa-solid fa-bars"></span>
+        <div class="hamburger" id="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </nav>
     </header>
     <!-- Header section -->
@@ -105,8 +120,8 @@
               </p>
             </div>
             <div class="card-btn">
-              <a href="https://bella-anjy.github.io/Estate-management-page/" target="_blank"><button><i class="fa-brands fa-github"></i>Live Preview</button></a>
-                 <a href="https://github.com/Bella-anjy/Estate-management-page"   target="_blank"><button><i class="fa-solid fa-link"></i>View Code</button></a>
+              <a href="https://bella-anjy.github.io/Estate-management-page/" target="_blank"><button><i class="fa-solid fa-link"></i>Live Preview</button></a>
+                 <a href="https://github.com/Bella-anjy/Estate-management-page"   target="_blank"><button><i class="fa-brands fa-github"></i>View Code</button></a>
             </div>
           </div>
           <div class="card">
@@ -195,5 +210,26 @@
      <!-- Footer section---->
 
 
+     <script>
+     document.addEventListener('DOMContentLoaded', function() {
+  const menu = document.getElementById('menu');
+  const hamburger = document.getElementById('menu-toggle');
+  const navLinks = document.querySelectorAll('.nav-list a');
+
+  // Toggle menu on hamburger click
+  hamburger.addEventListener('click', function() {
+    menu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  });
+
+  // Close menu when any navigation link is clicked
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      menu.classList.remove('active');
+      hamburger.classList.remove('active');
+    });
+  });
+});
+  </script>
   </body>
 </html>

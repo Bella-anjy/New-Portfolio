@@ -33,26 +33,87 @@ img {
   align-items: center;
   padding: 1rem 1.5rem;
   top: 0;
-  
+  position: sticky; /* Makes the header sticky */
+  background-color: #000; /* Ensures background color when sticky */
+  z-index: 1000; /* Ensures the header stays above other content */
 }
+
 .my-logo {
-  width: 60px;
+  width: 70px;
   margin-left: 5rem;
 }
+
 .nav-lists {
   display: flex;
-  gap: 5rem;
+  gap: 3rem; /* Reduced gap between navigation items */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.nav-list {
+
+.nav-list a {
   color: #ffffff;
   font-weight: 600;
   font-size: 18px;
+  text-decoration: none;
 }
-.fa-bars{
+
+.hamburger {
   display: none;
-  font-size: 20px;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .nav-lists {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #000000; /* Black background for the navigation menu */
+  }
+
+  .nav-list {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-lists.active {
+    display: flex;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
 }
 /* Header styles end */
+
+
 /* Hero styles start */
 .hero-container {
   margin-top: 6rem;
@@ -158,32 +219,39 @@ img {
   justify-content: center;
 }
 .card {
-  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px;
+  background-color: black; /* Card background color */
+  /* border: 7px solid #ccc; 15px border with a light gray color */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2); /* Light gray shadow */
   width: 20%;
-  margin: 2rem;
+  margin: .2rem;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
 }
+
+
 .card:hover {
   transform: scale(1.01, 1.02);
 }
 .card-img {
   max-width: 100%;
   height: 200px;
+  border-top-left-radius: 15px; /* Match the card's rounded corners */
+  border-top-right-radius: 15px;
 }
 .card-content {
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
   margin-bottom: 4rem;
+  padding: 1rem; /* Adds padding inside the card */
 }
+
 .card-title {
   font-weight: 800;
-  font-size: 24px;
-  line-height: 26px;
+  font-size: 20px;
+  line-height: 24px;
   margin-top: 1.1rem;
 }
 .card-desc {
@@ -207,6 +275,7 @@ img {
 }
 
 /* project styles end */
+
 /* contact  section*/
 .contact-container {
   display: flex;
